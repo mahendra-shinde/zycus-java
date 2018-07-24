@@ -1,0 +1,48 @@
+package : com.zycus.banking
+Account 
+	accountNumber
+	branchCode <static>
+	accountHolder 
+	accountType : Enum (Savings, Current)
+	balance
+	status: Enum (Active, Closed)
+	constructor must be default (No Access specifier)
+	Getters must be PUBLIC
+	setters must be default (No access specifier)
+
+Transaction 
+	Field: 		Branch branch
+	Constructor: 	Transaction(Branch branch)
+	methods:	withdraw(accountNumber, amount)
+				check if account exists using 'branch'
+				account need to 'Active'
+				minimum 1000 balance after withdrawal
+			deposit(accountNumber, amount)
+				check if account exists using 'branch'
+				account need to 'Active'
+			transfer(sourceAccountNumber, destinationAccountNumber, amount)  
+				Invokes both deposit and withdraw
+Branch 	
+	Map<Integer, Account> allAccounts
+	private static ACC_NO_GENERATOR=1
+	openNewAccount(accountType: enum, balance,accountHolder)
+	   method should generate new account number and use the same as KEY
+	getAccount(int accountNumber)
+	closeAccount(int accountNumber)
+	getAll() 
+		should return All accounts in List format
+	findByAccountHolder(String name)
+		should return All accounts for given account holder in Set format	
+
+App
+	main()
+		Create Branch object
+		Call openNewAccount to add atleast 10 accounts
+		Create Transaction object (pass above branch object)
+		Perform TWO withdraw, TWO deposits and TWO transfer transactions
+		List all accounts 
+		
+			Sort by balance (Asc/Desc)
+			Sort by Account number
+			Filter all Active and Closed account
+			Filter all Closed account with balance > 5000
