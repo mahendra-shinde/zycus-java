@@ -1,0 +1,33 @@
+﻿Assignment1:
+	Create FileCopy class which should implement "Runnable"
+	TWO properties String source, destination
+	In RUN method, write a code to copy 1000 bytes at a time between
+		source file and destination file.
+		Messages printed should be:
+			Source file found, preparing to copy
+			File copied successfuly
+
+	Create a Thread to copy one image file (JPG) from one directory to another 
+	using FileCopy class created earlier.
+
+
+Assignment2:
+	Create ContactList Applications where, application should keep
+	following details for each contact:
+		firstname, lastname
+		age, phone, email
+	
+	Application should store data in THREE files at once, 
+		Runnable class should have TWO properties:
+			filename and contactList
+	From main method, just create List of 10 contacts and pass them
+		to THREE threads.
+
+Assignment 3:
+	Create a Stack of Strings (java.util.Stack)
+
+	Create a Producer task with run method that adds 100 random strings
+	to common stack.
+	Create Consume task with run method that removes 100 strings from common stack.
+	Both producer and consumer should have constructor that takes Stack reference.
+	Create TWO threads for producer and TWO for consumer.	
