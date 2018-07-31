@@ -4,6 +4,14 @@ import java.sql.*;
 
 public class ConnectionUtil {
 
+	public static Connection getConnection() {
+		String driver = "org.apache.derby.jdbc.ClientDriver";
+		String url = "jdbc:derby://localhost:1527/sample";
+		String user = "user";
+		String pass ="pass";
+		return getConnection(driver, url, user, pass);
+	}
+	
 	public static Connection getConnection(String driver, String url, String user, String pass) {
 		
 		//Step1 : Load JDBC Driver class
