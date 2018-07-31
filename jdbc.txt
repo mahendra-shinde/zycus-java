@@ -22,18 +22,8 @@ Credentials: (Obtain from IT Team)
 	Card [ id, expiry, customer_id, balance, credit_limit ]
 	Customer [id, firstname, lastname, email ] 
 2. Create POJO Classes for above two tables
-	HINT : for Expiry use java.util.Date type
-		And use SimpleDateFormat to covert date between String and Date 
-		ResultSet.setDate and getDate used different class
-			java.sql.Date
-		To convert java.sql.Date into java.util.Date
-			java.sql.Date convertToSQL(java.util.Date d){
-				return new java.sql.Date(d.getTime());
-			}
-			java.util.Date convertToSQL(java.sql.Date d){
-				return new java.util.Date(d.getTime());
-			}		
- 	
+	HINT : for Expiry use java.sql.Date type
+		 	
 3. Create DAO Interface with following methods
 	create(T)
 	List<T> findAll()
