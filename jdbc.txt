@@ -1,0 +1,42 @@
+Oracle: 
+	ojdbc6.jar	For JDK 6
+	ojbdc14.jar	For JDK 1.4
+	ojdbc7.jar	For JDK 7
+	ojdbc8.jar	For JDK 8
+
+Driver Classname:
+	oracle.jdbc.OracleDriver
+
+Connection URL: [Oracle XE]
+	jdbc:oracle:thin:@SERVERNAME-IP:1521/xe
+
+Connection URL: [Oracle Standard or Enterprise]
+	jdbc:oracle:thin:@SERVERNAME-IP:1521/orcl
+
+Credentials: (Obtain from IT Team)
+	Common Credentials for Sample DB: hr/hr
+					  scott/tiger	
+
+======================
+1. Create following tables [Using Statement interface and "execute" method] :
+	Card [ id, expiry, customer_id, balance, credit_limit ]
+	Customer [id, firstname, lastname, email ] 
+2. Create POJO Classes for above two tables
+	HINT : for Expiry use java.util.Date type
+		And use SimpleDateFormat to covert date between String and Date 
+		ResultSet.setDate and getDate used different class
+			java.sql.Date
+		To convert java.sql.Date into java.util.Date
+			java.sql.Date convertToSQL(java.util.Date d){
+				return new java.sql.Date(d.getTime());
+			}
+			java.util.Date convertToSQL(java.sql.Date d){
+				return new java.util.Date(d.getTime());
+			}		
+ 	
+3. Create DAO Interface with following methods
+	create(T)
+	List<T> findAll()
+	T findById(int)	
+4. Using CardDAO and CustomerDAO, create TWO records each and then
+	using "findAll()" method print them on screen.
