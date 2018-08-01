@@ -1,0 +1,41 @@
+Servlet Assignment:
+
+	Build a XYZ Bank Web App
+	
+	home page: 	index.html (HTML Page)
+				provide history of bank and facilities available.
+	Links:
+	1. Open an Account (new-account.html)
+			Accept following details:
+				Firstname, Lastname, title, age
+				date of birth 
+		Upon submit, pass above data to servlet
+		NewAccountServlet.java
+		URL:	/new-account.do
+		Validate request parameters as follows:
+			firstname, lastname must contain at least 2 chars
+			title must be from Mr/Ms/Mrs/Dr
+		On Valid input, print message:
+			<title> <firstname>, your acccount creation request
+			is under processing.
+
+	2. Pay Bills (bill-pay.html)
+		Allow user to select from radio buttons:
+			Electric Bill, Phone Bill
+		Select provider (drop down):
+			MSEB, Tata, Reliance for eletric bill
+			MTNL, Jio, Airtel, Vodafone, Idea for Phone bill
+		Enter amount
+		Upon "Pay" button, call servlet : "PayBillServlet.java"
+		URL : /pay-bills.do
+		
+		Just print message "Payment is processed successfuly"
+
+	Create A filter "LOGFilter" to intercept the request made to all
+	URLs that end with ".do"
+	Use "request" object's special method "getRemoteAddress" to print
+	IP address of client along with message "Now performing transaction ..."
+	followed by request URL
+	NOTE : Need to study HttpServletRequest and ServletRequest javadocs to 
+		complete this assignment.			
+				
