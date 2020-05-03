@@ -3,7 +3,7 @@ package com.mahendra;
 import java.sql.*;
 
 public class Emp2DAO implements CommonDAO<Employee> {
-private static final String SQL_SELECT_ID="select empid, ename, desg from emp2";
+private static final String SQL_SELECT_ID="select empid, ename, desg from emp2 where empid=?";
 private static final String SQL_UPDATE="update emp2 set ename=? , desg=? where empid=?";
 private static final String SQL_DELETE="delete from emp2 where empid=?";
 private static final String SQL_INSERT="insert into emp2(empid, ename, desg) values(?,?,?)";
